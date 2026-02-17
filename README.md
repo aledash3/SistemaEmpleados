@@ -1,9 +1,3 @@
-#🧑‍💼 Sistema de Gestión de Empleados
-
-Sistema web desarrollado con arquitectura **MEAN Stack (MongoDB,
-Express, Angular, Node.js)** para la administración y gestión de
-empleados dentro de una organización.
-
 ------------------------------------------------------------------------
 
 ## 📌 Descripción
