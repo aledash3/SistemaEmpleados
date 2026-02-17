@@ -1,4 +1,4 @@
-[README_SistemaEmpleados.md](https://github.com/user-attachments/files/25374686/README_SistemaEmpleados.md)[# 🧑‍💼 Sistema de Gestión de Empleados
+##🧑‍💼 Sistema de Gestión de Empleados
 
 Sistema web desarrollado con arquitectura **MEAN Stack (MongoDB,
 Express, Angular, Node.js)** para la administración y gestión de
