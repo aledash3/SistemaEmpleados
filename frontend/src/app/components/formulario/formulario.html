@@ -1,0 +1,146 @@
+<hr>
+<h2 class="text-center text-primary mb-4">
+  Registro de Facturas
+</h2>
+
+<form (ngSubmit)="agregarFactura()" #facturaForm="ngForm">
+
+  <div class="mb-3">
+    <label class="form-label">RUC de la empresa</label>
+    <input type="text"
+           class="form-control"
+           name="rucEmpresa"
+           [(ngModel)]="rucEmpresa"
+           required>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Valor de la factura</label>
+    <input type="number"
+           class="form-control"
+           name="valorFactura"
+           [(ngModel)]="valorFactura"
+           min="0"
+           required>
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Tipo de gasto</label>
+    <select class="form-select"
+            name="tipoGastoFactura"
+            [(ngModel)]="tipoGastoFactura">
+      <option value="Ninguno">Seleccione</option>
+      <option value="Alimentacion">Alimentación</option>
+      <option value="Vivienda">Vivienda</option>
+      <option value="Educacion">Educación</option>
+      <option value="Vestimenta">Vestimenta</option>
+      <option value="Salud">Salud</option>
+    </select>
+  </div>
+
+  <button type="submit"
+          class="btn btn-primary w-100"
+          [disabled]="facturaForm.invalid">
+    Agregar factura
+  </button>
+
+</form>
+
+<h2 class="text-center text-success mt-4">
+  Calculadora de Gastos Personales Deducibles
+</h2>
+
+<div class="container">
+
+  <div class="mb-3">
+  <label class="form-label">Cédula</label>
+  <input
+    type="text"
+    class="form-control"
+    name="cedula"
+    [(ngModel)]="cedula"
+    required
+  />
+</div>
+
+<div class="mb-3">
+  <label class="form-label">Sueldo anual</label>
+  <input
+    type="number"
+    class="form-control"
+    name="sueldoAnual"
+    [(ngModel)]="sueldoAnual"
+    min="0"
+    required
+  />
+</div>
+
+  <div class="mb-3">
+    <label>Alimentación</label>
+    <input type="number" class="form-control"
+           [(ngModel)]="alimentacion"
+           name="alimentacion">
+  </div>
+
+  <div class="mb-3">
+    <label>Vivienda</label>
+    <input type="number" class="form-control"
+           [(ngModel)]="vivienda"
+           name="vivienda">
+  </div>
+
+  <div class="mb-3">
+    <label>Educación, arte y cultura</label>
+    <input type="number" class="form-control"
+           [(ngModel)]="educacion"
+           name="educacion">
+  </div>
+
+  <div class="mb-3">
+    <label>Vestimenta</label>
+    <input type="number" class="form-control"
+           [(ngModel)]="vestimenta"
+           name="vestimenta">
+  </div>
+
+  <div class="mb-3">
+    <label>Salud</label>
+    <input type="number" class="form-control"
+           [(ngModel)]="salud"
+           name="salud">
+  </div>
+
+  <button class="btn btn-success w-100"
+          (click)="calcularGastosPersonales()">
+    Calcular total deducible
+  </button>
+
+  <div class="mt-3">
+    <p><strong>Total gastos personales:</strong> ${{ totalGastosPersonales }}</p>
+    <p><strong>Total deducible permitido:</strong> ${{ totalDeducible }}</p>
+    <small class="text-muted">
+      Tope máximo anual: ${{ TOPE_GASTOS }}
+    </small>
+  </div>
+
+</div>
+
+<hr />
+
+<h3 class="text-primary mt-4">Resultados del Impuesto a la Renta</h3>
+
+<div *ngIf="baseImponible > 0">
+  <p><strong>Base imponible:</strong> ${{ baseImponible }}</p>
+  <p><strong>Impuesto a la renta:</strong> ${{ impuestoRenta }}</p>
+</div>
+
+<div *ngIf="resultadoJSON" class="mt-4">
+  <h4>Resultado generado en JSON</h4>
+  <pre>{{ resultadoJSON | json }}</pre>
+</div>
+
+<button class="btn btn-primary w-100 mt-3"
+        (click)="agregar()">
+  Calcular impuesto a la renta
+</button>
+

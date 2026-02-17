@@ -1,0 +1,28 @@
+.card-img-top {
+  width: 25%;
+  height: 25%;        /* ajusta el alto */
+  object-fit: cover;   /* recorta sin deformar */
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card {
+  border: none;
+  box-shadow: none;
+  margin-bottom: 20px;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
