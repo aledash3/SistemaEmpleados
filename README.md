@@ -160,12 +160,11 @@ PORT=4000
 ------------------------------------------------------------------------
 
 ## 👨‍💻 Autor
-
-Proyecto académico -- Ingeniería en Sistemas
-
+David Alejandro Cruz Palacios 
+Proyecto académico -- Ingeniería en Ciencias de la Computación
 ------------------------------------------------------------------------
 
 ## 📄 Licencia
 
 Proyecto desarrollado con fines académicos.
-Uploading README_SistemaEmpleados.md…]()
+
